@@ -144,22 +144,16 @@
 </section>
 
   <section>
-  <div class="form-order">
-    <h3>Form Order Hosting</h3>
-    <form onsubmit="kirimOrder(); return false;">
-      <input type="text" id="namaServer" placeholder="Nama Server" required><br>
-      <input type="text" id="slot" placeholder="Jumlah Slot" required><br>
-      <select id="os" required>
-        <option value="" disabled selected>Pilih OS</option>
-        <option value="Linux">Linux</option>
-        <option value="Windows">Windows</option>
-      </select><br>
-      <input type="text" id="user" placeholder="Username Hosting" required><br>
-      <input type="text" id="password" placeholder="Password Hosting" required><br>
-      <button type="submit" class="btn">Kirim Pesanan</button>
-    </form>
-  </div>
-</section>
+    <div class="form-order">
+      <h3>Form Order Langsung</h3>
+      <form onsubmit="kirimOrder(); return false;">
+        <input type="text" id="nama" placeholder="Nama Kamu" required><br>
+        <input type="email" id="email" placeholder="Email" required><br>
+        <textarea id="pesan" rows="4" placeholder="Pesan / Request kamu" required></textarea><br>
+        <button type="submit" class="btn">Kirim Order</button>
+      </form>
+    </div>
+  </section>
 
   <footer>
     <div class='copyright'> Copyright ©
@@ -178,28 +172,13 @@
       document.getElementById("toTop").style.display = window.scrollY > 100 ? "block" : "none";
     }
 
-    <script>
-  function kirimOrder() {
-    const namaServer = document.getElementById("namaServer").value;
-    const slot = document.getElementById("slot").value;
-    const os = document.getElementById("os").value;
-    const user = document.getElementById("user").value;
-    const password = document.getElementById("password").value;
-
-    const pesan = 
-`╔═══════════════════════
-║ **LOGS PESANAN HOSTING**
-╠═══════════════════════
-║ **Nama Server:** ${namaServer}
-║ **Slot:** ${slot}
-║ **Linux or Windows:** ${os}
-║ **User:** ${user}
-║ **Password:** ${password}
-╚═══════════════════════`;
-
-    const url = `https://wa.me/6287854851480?text=${encodeURIComponent(pesan)}`;
-    window.open(url, '_blank');
-  }
-</script>
+    function kirimOrder() {
+      const nama = document.getElementById("nama").value;
+      const email = document.getElementById("email").value;
+      const pesan = document.getElementById("pesan").value;
+      const url = `https://wa.me/6287854851480?text=Halo admin, saya ${nama} (${email}). Saya ingin pesan hosting: ${pesan}`;
+      window.open(url, '_blank');
+    }
+  </script>
 </body>
 </html>
