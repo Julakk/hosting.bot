@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hosting Bot Murah</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      color: #00ffcc;
+    }
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+    .paket, .testimoni, .form-order {
+      background: #262626;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .paket h2, .testimoni h3, .form-order h3 {
+      color: #00ffcc;
+    }
+    .btn {
+      background: #00ffcc;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    input, textarea {
+      width: 90%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1a1a1a;
+      color: #888;
+    }
+    #toTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #00ffcc;
+      color: #000;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🤖 PAKET HOSTING BOT AHMADSTORE</h1>
+    <p>🔹Dapatkan performa terbaik untuk bot Discord kamu dengan harga terjangkau!</p>
+    <p>🔹Uptime tinggi, koneksi stabil, dan dukungan penuh!</p>
+  </header>
+
+  <section>
+    <div class="paket">
+      <h2>🟢 PAKET LOW (Pemakaian Ringan)</h2>
+      <p>✅ Cocok untuk: Bot sederhana seperti command dasar, auto-reply, logging ringan.</p>
+      <p>💠 CPU: 1 Core</p>
+      <p>💻 RAM: 512MB</p>
+      <p>🗄️ Storage: 300MB NVMe</p>
+     <p> 🇸🇬 Region: Singapore</p>
+      <p>💰 Harga: Rp10.000/Bulan</p>
+      <p>✨ Keunggulan</p>
+      <p>✔️ Hemat & Stabil – Cocok untuk bot kecil yang tidak butuh banyak resource.</p>
+      <p>✔️ Mudah Digunakan – Cukup upload bot kamu dan langsung jalan!</p>
+    </div>
+
+    <div class="paket">
+     <h2>🔵 PAKET MEDIUM (Pemakaian Sedang)</h2>
+     <p>✅ Cocok untuk: Bot dengan fitur lebih banyak seperti leveling, ekonomi, atau musik ringan.</p>
+     <p>💠 CPU: 2 Core</p>
+     <p>💻 RAM: 1GB</p> 
+     <p>🗄️ Storage: 600MB NVMe</p>
+     <p>🇸🇬 Region: Singapore</p>
+     <p>💰 Harga: Rp20.000/Bulan</p>
+     <p>✨ Keunggulan</p>
+     <p>✔️ Performa Lebih Kuat – Bisa menangani lebih banyak request dan fitur.</p>
+     <p>✔️ Lancar & Stabil – Tidak mudah lag meskipun bot aktif terus.</p>
+    </div>
+    
+    <div class="paket">
+     <h2>🔴 PAKET EXTREME (Pemakaian Berat)</h2>
+     <p>✅ Cocok untuk: Bot besar dengan fitur lengkap seperti AI, musik 24/7, auto-moderation, atau database besar.</p>
+     <p>💠 CPU: 4 Core</p>
+     <p>💻 RAM: 2GB</p> 
+     <p>🗄️ Storage: 1GB NVMe</p>
+     <p>🗄️ Database: Gratis 1 Database</p>
+     <p>🇸🇬 Region: Singapore</p>
+     <p>💰 Harga: Rp35.000/Bulan</p>
+     <p>✨ Keunggulan</p>
+     <p>✔️ Performa Maksimal – Bisa menangani ratusan pengguna sekaligus!</p>
+     <p>✔️ Stabil & Cepat – Bebas dari lag meskipun bot berjalan 24/7.</p>
+     <p>✔️ Database Gratis! – Cocok untuk bot yang membutuhkan penyimpanan data.</p>
+    </div>
+  </section>
+
+<section>
+  <div class="testimoni">
+    <h3>Rules Hosting Ahmadstore</h3>
+    <ul style="text-align: left; max-width: 500px; margin: auto; line-height: 1.7;">
+      <li>Dilarang menggunakan bot untuk aktivitas ilegal atau SARA.</li>
+      <li>Resource disesuaikan dengan paket, overload akan diberi peringatan.</li>
+      <li>Backup data adalah tanggung jawab pengguna.</li>
+      <li>Dilarang menjalankan miner, spam bot, atau tools berbahaya.</li>
+      <li>Pelanggaran rules dapat menyebabkan suspend tanpa refund.</li>
+      <li>Support hanya melalui Discord resmi yang tertera.</li>
+    </ul>
+  </div>
+</section>
+
+  <section>
+  <div class="form-order">
+    <h3>Form Order Hosting</h3>
+    <form onsubmit="kirimOrder(); return false;">
+      <input type="text" id="namaServer" placeholder="Nama Server" required><br>
+      <input type="text" id="slot" placeholder="Jumlah Slot" required><br>
+      <select id="os" required>
+        <option value="" disabled selected>Pilih OS</option>
+        <option value="Linux">Linux</option>
+        <option value="Windows">Windows</option>
+      </select><br>
+      <input type="text" id="user" placeholder="Username Hosting" required><br>
+      <input type="text" id="password" placeholder="Password Hosting" required><br>
+      <button type="submit" class="btn">Kirim Pesanan</button>
+    </form>
+  </div>
+</section>
+
+  <footer>
+    <div class='copyright'> Copyright ©
+        <a href='https://discord.gg/rbQQwNXhEA'>Ahmadstore. Semua Hak Dilindungi.</a>
+    </div>
+  </footer>
+
+  <div id="toTop" onclick="scrollToTop()">↑</div>
+
+  <script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.onscroll = function () {
+      document.getElementById("toTop").style.display = window.scrollY > 100 ? "block" : "none";
+    }
+
+    <script>
+  function kirimOrder() {
+    const namaServer = document.getElementById("namaServer").value;
+    const slot = document.getElementById("slot").value;
+    const os = document.getElementById("os").value;
+    const user = document.getElementById("user").value;
+    const password = document.getElementById("password").value;
+
+    const pesan = 
+`╔═══════════════════════
+║ **LOGS PESANAN HOSTING**
+╠═══════════════════════
+║ **Nama Server:** ${namaServer}
+║ **Slot:** ${slot}
+║ **Linux or Windows:** ${os}
+║ **User:** ${user}
+║ **Password:** ${password}
+╚═══════════════════════`;
+
+    const url = `https://wa.me/6287854851480?text=${encodeURIComponent(pesan)}`;
+    window.open(url, '_blank');
+  }
+</script>
+</body>
+</html>
