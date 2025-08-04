@@ -1,184 +1,366 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hosting Bot Murah</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ahmad Store - Hosting SA-MP Roleplay</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #0d0d0d;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0a0a0a;
       color: #fff;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
     }
+
     header {
-      background: #1a1a1a;
-      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
       text-align: center;
+      padding: 30px 20px;
+      background-image: url('https://cdn.discordapp.com/attachments/1376138766887944192/1376138830444367892/file_00000000548061fbafc4da16180374c6_1.png?ex=6891d728&is=689085a8&hm=de04c6af3d8e70801d4ee33b383023fb5284fecb39c01c4bfc96c429dc93a5eb&');
+      background-size: cover;
+      background-position: center;
     }
-    h1 {
+
+    header h1 {
+      font-size: 36px;
       margin: 0;
-      color: #00ffcc;
+      color: #00ffd5;
+      text-shadow: 2px 2px 4px #000;
     }
-    section {
-      padding: 40px;
+
+    header p {
+      font-size: 16px;
+      color: #ccc;
+      margin-top: 10px;
+    }
+
+    nav {
+      background: #111;
       text-align: center;
+      padding: 10px;
+      border-top: 2px solid #00ffd5;
+      border-bottom: 2px solid #00ffd5;
     }
-    .paket, .testimoni, .form-order {
-      background: #262626;
-      margin: 20px auto;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 500px;
-      animation: fadeIn 1s ease-in-out;
+
+    nav a {
+      color: #00ffd5;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 14px;
     }
-    .paket h2, .testimoni h3, .form-order h3 {
-      color: #00ffcc;
+
+    .hero {
+      padding: 50px 20px;
+      text-align: center;
+      background: linear-gradient(to right, #111, #222);
     }
-    .btn {
-      background: #00ffcc;
+
+    .hero h2 {
+      font-size: 26px;
+      background: #00ffd5;
       color: #000;
+      display: inline-block;
       padding: 10px 20px;
-      border: none;
       border-radius: 8px;
+      box-shadow: 0 0 10px #00ffd5;
+    }
+
+    .filter-menu {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .filter-menu select {
+      padding: 10px;
+      background: #111;
+      color: #00ffd5;
+      border: 1px solid #00ffd5;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .paket {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      padding: 40px 20px;
+      background-color: #121212;
+    }
+
+    .card {
+      background: #1e1e1e;
+      border: 2px solid #00ffd5;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 0 10px #00ffd5aa;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #00ffd5;
+      font-size: 20px;
+    }
+
+    .card p {
+      margin: 8px 0;
+      color: #ccc;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 12px;
+      background: #7289da;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
-      display: inline-block;
-      margin-top: 10px;
     }
-    input, textarea {
-      width: 90%;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 5px;
-      border: none;
-      outline: none;
-    }
+
     footer {
+      background: #0d0d0d;
       text-align: center;
       padding: 20px;
-      background: #1a1a1a;
+      font-size: 14px;
       color: #888;
-    }
-    #toTop {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #00ffcc;
-      color: #000;
-      padding: 10px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+      border-top: 1px solid #333;
     }
   </style>
+  <script>
+    function filterPaket() {
+      const kategori = document.getElementById('kategori').value;
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        if (kategori === 'all' || card.classList.contains(kategori)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </head>
 <body>
-  <header>
-    <h1>🤖 PAKET HOSTING BOT AHMADSTORE</h1>
-    <p>🔹Dapatkan performa terbaik untuk bot Discord kamu dengan harga terjangkau!</p>
-    <p>🔹Uptime tinggi, koneksi stabil, dan dukungan penuh!</p>
-  </header>
 
-  <section>
-    <div class="paket">
-      <h2>🟢 PAKET LOW (Pemakaian Ringan)</h2>
-      <p>✅ Cocok untuk: Bot sederhana seperti command dasar, auto-reply, logging ringan.</p>
-      <p>💠 CPU: 1 Core</p>
-      <p>💻 RAM: 512MB</p>
-      <p>🗄️ Storage: 300MB NVMe</p>
-     <p> 🇸🇬 Region: Singapore</p>
-      <p>💰 Harga: Rp10.000/Bulan</p>
-      <p>✨ Keunggulan</p>
-      <p>✔️ Hemat & Stabil – Cocok untuk bot kecil yang tidak butuh banyak resource.</p>
-      <p>✔️ Mudah Digunakan – Cukup upload bot kamu dan langsung jalan!</p>
-    </div>
+<header>
+  <h1>AHMAD STORE RP HOSTING</h1>
+  <p>Bangun server Roleplay impianmu, mulai dari 10K!</p>
+</header>
 
-    <div class="paket">
-     <h2>🔵 PAKET MEDIUM (Pemakaian Sedang)</h2>
-     <p>✅ Cocok untuk: Bot dengan fitur lebih banyak seperti leveling, ekonomi, atau musik ringan.</p>
-     <p>💠 CPU: 2 Core</p>
-     <p>💻 RAM: 1GB</p> 
-     <p>🗄️ Storage: 600MB NVMe</p>
-     <p>🇸🇬 Region: Singapore</p>
-     <p>💰 Harga: Rp20.000/Bulan</p>
-     <p>✨ Keunggulan</p>
-     <p>✔️ Performa Lebih Kuat – Bisa menangani lebih banyak request dan fitur.</p>
-     <p>✔️ Lancar & Stabil – Tidak mudah lag meskipun bot aktif terus.</p>
-    </div>
-    
-    <div class="paket">
-     <h2>🔴 PAKET EXTREME (Pemakaian Berat)</h2>
-     <p>✅ Cocok untuk: Bot besar dengan fitur lengkap seperti AI, musik 24/7, auto-moderation, atau database besar.</p>
-     <p>💠 CPU: 4 Core</p>
-     <p>💻 RAM: 2GB</p> 
-     <p>🗄️ Storage: 1GB NVMe</p>
-     <p>🗄️ Database: Gratis 1 Database</p>
-     <p>🇸🇬 Region: Singapore</p>
-     <p>💰 Harga: Rp35.000/Bulan</p>
-     <p>✨ Keunggulan</p>
-     <p>✔️ Performa Maksimal – Bisa menangani ratusan pengguna sekaligus!</p>
-     <p>✔️ Stabil & Cepat – Bebas dari lag meskipun bot berjalan 24/7.</p>
-     <p>✔️ Database Gratis! – Cocok untuk bot yang membutuhkan penyimpanan data.</p>
-    </div>
-  </section>
+<nav>
+  <a href="#paket">Paket Hosting</a>
+  <a href="https://discord.com/users/1295719339369955384" target="_blank">PM Discord</a>
+</nav>
 
-<section>
-  <div class="testimoni">
-    <h3>Rules Hosting Ahmadstore</h3>
-    <ul style="text-align: left; max-width: 500px; margin: auto; line-height: 1.7;">
-      <li>Dilarang menggunakan bot untuk aktivitas ilegal atau SARA.</li>
-      <li>Resource disesuaikan dengan paket, overload akan diberi peringatan.</li>
-      <li>Backup data adalah tanggung jawab pengguna.</li>
-      <li>Dilarang menjalankan miner, spam bot, atau tools berbahaya.</li>
-      <li>Pelanggaran rules dapat menyebabkan suspend tanpa refund.</li>
-      <li>Support hanya melalui Discord resmi yang tertera.</li>
-    </ul>
+<section class="hero">
+  <h2>🔥 Siapkan Dunia RP-mu Sekarang! 🔥</h2>
+</section>
+
+<section class="filter-menu">
+  <label for="kategori">🎮 Pilih Jenis Hosting:</label>
+  <select id="kategori" onchange="filterPaket()">
+    <option value="all">🔄 Semua Paket</option>
+    <option value="ryzen">☁️ SA-MP Ryzen</option>
+    <option value="premium">🖥️ SA-MP Premium</option>
+    <option value="budged">🔒 SA-MP Budged</option>
+    <option value="dedicated">💸 SA-MP Dedicated</option>
+    <option value="cloud">🌟 SA-MP Cloud</option>
+  </select>
+</section>
+
+<section id="paket" class="paket">
+  <div class="card ryzen murah">
+    <h3>SA-MP Ryzen Hosting</h3>
+    <p>☁️ Performa maksimal</p>
+    <p>💰 Rp 25.000/bulan</p>
+    <p>✅ 30 Slot Players</p>
+    <p>✅ Auto Backup Database</p>
+    <p>✅ Cpu & Ram Unlimited</p>
+    <p>✅ Support port voice</p>
+    <p>🇸🇬 SINGAPORE</p>
+  </div>
+  
+    <div class="card ryzen murah">
+    <h3>SA-MP Ryzen Hosting</h3>
+    <p>☁️ Performa maksimal</p>
+    <p>💰 Rp 45.000/bulan</p>
+    <p>✅ 50 Slot Players</p>
+    <p>✅ Auto Backup Database</p>
+    <p>✅ Cpu & Ram Unlimited</p>
+    <p>✅ Support port voice</p>
+    <p>🇸🇬 SINGAPORE</p>
+  </div>
+  
+    <div class="card ryzen murah">
+    <h3>SA-MP Ryzen Hosting</h3>
+    <p>☁️ Performa maksimal</p>
+    <p>💰 Rp 65.000/bulan</p>
+    <p>✅ 70 Slot Players</p>
+    <p>✅ Auto Backup Database</p>
+    <p>✅ Cpu & Ram Unlimited</p>
+    <p>✅ Support port voice</p>
+    <p>🇸🇬 SINGAPORE</p>
+  </div>
+  
+    <div class="card ryzen murah">
+    <h3>SA-MP Ryzen Hosting</h3>
+    <p>☁️ Performa maksimal</p>
+    <p>💰 Rp 95.000/bulan</p>
+    <p>✅ 150 Slot Players</p>
+    <p>✅ Auto Backup Database</p>
+    <p>✅ Cpu & Ram Unlimited</p>
+    <p>✅ Support port voice</p>
+    <p>🇸🇬 SINGAPORE</p>
+  </div>
+  
+    <div class="card ryzen murah">
+    <h3>SA-MP Ryzen Hosting</h3>
+    <p>☁️ Performa maksimal</p>
+    <p>💰 Rp 155.000/bulan</p>
+    <p>✅ 200 Slot Players</p>
+    <p>✅ Auto Backup Database</p>
+    <p>✅ Cpu & Ram Unlimited</p>
+    <p>✅ Support port voice</p>
+    <p>🇸🇬 SINGAPORE</p>
+  </div>
+
+  <div class="card premium">
+    <h3>SA-MP Premium Hosting</h3>
+    <p>🖥️ performa tinggi</p>
+    <p>💰 Rp 65.000/bulan</p>
+    <p>✅ 100 Slot Players</p>
+    <p>✅ Auto Backup Database</p>
+    <p>✅ Uptime 24/7</p>
+    <p>✅ Support Linux OR Windows</p>
+  </div>
+  
+    <div class="card premium">
+    <h3>SA-MP Premium Hosting</h3>
+    <p>🖥️ performa tinggi</p>
+    <p>💰 Rp 145.000/bulan</p>
+    <p>✅ 200 Slot Players</p>
+    <p>✅ Auto Backup Database</p>
+    <p>✅ Uptime 24/7</p>
+    <p>✅ Support Linux OR Windows</p>
+  </div>
+  
+    <div class="card premium">
+    <h3>SA-MP Premium Hosting</h3>
+    <p>🖥️ performa tinggi</p>
+    <p>💰 Rp 190.000/bulan</p>
+    <p>✅ 300 Slot Players</p>
+    <p>✅ Auto Backup Database</p>
+    <p>✅ Uptime 24/7</p>
+    <p>✅ Support Linux OR Windows</p>
+  </div>
+  
+    <div class="card premium">
+    <h3>SA-MP Premium Hosting</h3>
+    <p>🖥️ performa tinggi</p>
+    <p>💰 Rp 225.000/bulan</p>
+    <p>✅ 400 Slot Players</p>
+    <p>✅ Auto Backup Database</p>
+    <p>✅ Uptime 24/7</p>
+    <p>✅ Support Linux OR Windows</p>
+  </div>
+
+  <div class="card budged">
+    <h3>SA-MP Budged Hosting</h3>
+    <p>🔒 aman dan stabil</p>
+    <p>💰 Rp 35.000/bulan</p>
+    <p>✅ 40 Slot Players</p>
+    <p>🚀 Cocok untuk pemula hingga pro! Stabil & siap pakai.</p>
+    <p>📦 Hosted di server Linux handal & performa tinggi.</p>
+  </div>
+  
+    <div class="card budged">
+    <h3>SA-MP Budged Hosting</h3>
+    <p>🔒 aman dan stabil</p>
+    <p>💰 Rp 50.000/bulan</p>
+    <p>✅ 55 Slot Players</p>
+    <p>🚀 Cocok untuk pemula hingga pro! Stabil & siap pakai.</p>
+    <p>📦 Hosted di server Linux handal & performa tinggi.</p>
+  </div>
+  
+    <div class="card budged">
+    <h3>SA-MP Budged Hosting</h3>
+    <p>🔒 aman dan stabil</p>
+    <p>💰 Rp 75.000/bulan</p>
+    <p>✅ 80 Slot Players</p>
+    <p>🚀 Cocok untuk pemula hingga pro! Stabil & siap pakai.</p>
+    <p>📦 Hosted di server Linux handal & performa tinggi.</p>
+  </div>
+  
+    <div class="card budged">
+    <h3>SA-MP Budged Hosting</h3>
+    <p>🔒 aman dan stabil</p>
+    <p>💰 Rp 105.000/bulan</p>
+    <p>✅ 110 Slot Players</p>
+    <p>🚀 Cocok untuk pemula hingga pro! Stabil & siap pakai.</p>
+    <p>📦 Hosted di server Linux handal & performa tinggi.</p>
+  </div>
+  
+  <div class="card dedicated">
+    <h3>SA-MP dedicated</h3>
+    <p>🎮 100 Slot Players</p>
+    <p>💰 Rp 50.000/bulan</p>
+    <p>🔥 Performa Tinggi | Full Akses Root | Anti-Lag 🔥</p>
+  </div>
+  
+    <div class="card dedicated">
+    <h3>SA-MP dedicated</h3>
+    <p>🎮 200 Slot Players</p>
+    <p>💰 Rp 150.000/bulan</p>
+    <p>🔥 Performa Tinggi | Full Akses Root | Anti-Lag 🔥</p>
+  </div>
+  
+    <div class="card dedicated">
+    <h3>SA-MP dedicated</h3>
+    <p>🎮 1000 Slot Players</p>
+    <p>💰 Rp 500.000/bulan</p>
+    <p>🔥 Performa Tinggi | Full Akses Root | Anti-Lag 🔥</p>
+  </div>
+
+  <div class="card cloud">
+    <h3>SA-MP Cloud</h3>
+    <p>🌟 Untuk server aktif & besar</p>
+    <p>💰 Rp 45.000/bulan</p>
+    <p>🎮 50 Slot Players</p>
+    <p>✅ Support Linux & Windows</p>
+  </div>
+  
+    <div class="card cloud">
+    <h3>SA-MP Cloud</h3>
+    <p>🌟 Untuk server aktif & besar</p>
+    <p>💰 Rp 55.000/bulan</p>
+    <p>🎮 60 Slot Players</p>
+    <p>✅ Support Linux & Windows</p>
+  </div>
+  
+    <div class="card cloud">
+    <h3>SA-MP Cloud</h3>
+    <p>🌟 Untuk server aktif & besar</p>
+    <p>💰 Rp 75.000/bulan</p>
+    <p>🎮 80 Slot Players</p>
+    <p>✅ Support Linux & Windows</p>
+  </div>
+  
+    <div class="card cloud">
+    <h3>SA-MP Cloud</h3>
+    <p>🌟 Untuk server aktif & besar</p>
+    <p>💰 Rp 100.000/bulan</p>
+    <p>🎮 110 Slot Players</p>
+    <p>✅ Support Linux & Windows</p>
   </div>
 </section>
 
-  <section>
-    <div class="form-order">
-      <h3>Form Order Langsung</h3>
-      <form onsubmit="kirimOrder(); return false;">
-        <input type="text" id="nama" placeholder="Nama Kamu" required><br>
-        <input type="email" id="email" placeholder="Email" required><br>
-        <textarea id="pesan" rows="4" placeholder="Pesan / Request kamu" required></textarea><br>
-        <button type="submit" class="btn">Kirim Order</button>
-      </form>
-    </div>
-  </section>
+<footer>
+  &copy; 2025 Ahmad Store | Hosting SA-MP Roleplay
+</footer>
 
-  <footer>
-    <div class='copyright'> Copyright ©
-        <a href='https://discord.gg/rbQQwNXhEA'>Ahmadstore. Semua Hak Dilindungi.</a>
-    </div>
-  </footer>
-
-  <div id="toTop" onclick="scrollToTop()">↑</div>
-
-  <script>
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    window.onscroll = function () {
-      document.getElementById("toTop").style.display = window.scrollY > 100 ? "block" : "none";
-    }
-
-    function kirimOrder() {
-      const nama = document.getElementById("nama").value;
-      const email = document.getElementById("email").value;
-      const pesan = document.getElementById("pesan").value;
-      const url = `https://wa.me/6287854851480?text=Halo admin, saya ${nama} (${email}). Saya ingin pesan hosting: ${pesan}`;
-      window.open(url, '_blank');
-    }
-  </script>
 </body>
 </html>
